@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round"
+        android:id="@+id/ivProfileImage"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        tools:text="This is my username moreafdssdof workdfasdsfsdladksfjdas;lkfjdsal;kfjdkls;fjadls;fjadskl;fjdlskafjlksdfjldsa"
+        android:textColor="@color/black"
+        android:id="@+id/tvUsername"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivProfileImage"
+        tools:src="@tools:sample/avatars"
+        android:id="@+id/ivPicture"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/ivLikes"
+        android:layout_below="@+id/ivPicture"
+        android:src="@drawable/heart"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/ivComments"
+        android:layout_below="@+id/ivPicture"
+        android:layout_toRightOf="@+id/ivLikes"
+        android:src="@drawable/comment"/>
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:id="@+id/ivDirect"
+        android:layout_below="@+id/ivPicture"
+        android:layout_toRightOf="@+id/ivComments"
+        android:src="@drawable/new_direct"/>
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd ="20dp"
+        android:id="@+id/ivSave"
+        android:layout_below="@+id/ivPicture"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/save"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvLikesCount"
+        android:text="0 likes"
+        android:textColor="@color/black"
+        android:layout_below="@+id/ivLikes"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="this is the description of the image i want to post"
+        android:id="@+id/tvDescription"
+        android:layout_below="@+id/tvLikesCount"
+        android:textColor="@color/black"/>
+
+
+</RelativeLayout>
