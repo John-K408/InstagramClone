@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivProfileImage"
-        tools:src="@tools:sample/avatars"
+        android:src="@drawable/instagram_user_filled_24"
         android:id="@+id/ivPicture"/>
     <ImageView
         android:layout_marginTop="20dp"

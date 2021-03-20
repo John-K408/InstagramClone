@@ -77,7 +77,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
         public void bind(Post post) {
             tvUsername.setText(post.getUser().getUsername());
             //fill imageView with post's image
-            Glide.with(context).load(post.getImage()).into(ivPicture);
+            //Glide.with(context).load(post.getImage()).into(ivPicture);
             tvDescription.setText(post.getDescription());
         }
     }
