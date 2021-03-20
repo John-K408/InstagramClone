@@ -7,16 +7,17 @@
     >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@mipmap/ic_launcher_round"
         android:id="@+id/ivProfileImage"
+        android:layout_marginTop="20dp"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
@@ -27,12 +28,14 @@
         android:id="@+id/tvUsername"/>
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ivProfileImage"
         tools:src="@tools:sample/avatars"
         android:id="@+id/ivPicture"/>
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
@@ -41,6 +44,7 @@
         android:src="@drawable/heart"/>
 
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
@@ -50,6 +54,7 @@
         android:src="@drawable/comment"/>
 
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
@@ -60,6 +65,7 @@
 
 
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd ="20dp"
@@ -69,6 +75,7 @@
         android:src="@drawable/save"/>
 
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvLikesCount"

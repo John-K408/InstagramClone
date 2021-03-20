@@ -39,7 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         toolbar = (Toolbar)(findViewById(R.id.toolbar));
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        if(ParseUser.getCurrentUser() != null)goMainActivity();
+        if(ParseUser.getCurrentUser() != null){
+            //goMainActivity();
+            goFeedActivity();
+        }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    goMainActivity();
+                    goFeedActivity();
                     Toast.makeText(LoginActivity.this,"Successfully logged in!",Toast.LENGTH_LONG).show();
                 }
             }
@@ -82,6 +85,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void goMainActivity() {
         Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void goFeedActivity(){
+        Intent intent = new Intent(this,feedActivity.class);
         startActivity(intent);
         finish();
     }

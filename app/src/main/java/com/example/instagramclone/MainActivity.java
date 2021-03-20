@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description,currentUser,photoFile);
+                finish();
 
             }
         });
@@ -82,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        queryPosts();
     }
+
 
     private void launchCamera() {
         //Clear whatever is in description and image view once user presses "take picture"
@@ -160,25 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 etDescription.setText("");
                 ivImage.setImageResource(0);
                 Snackbar.make(ivImage,"Post was successfully created",Snackbar.LENGTH_LONG).show();
-            }
-        });
-
-    }
-
-    private void queryPosts() {
-        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.include(Post.KEY_USER);
-        query.findInBackground(new FindCallback<Post>() {
-            @Override
-            public void done(List<Post> posts, ParseException e) {
-                if(e != null){
-                    Log.e(TAG,"Issue with getting posts",e);
-                    return;
-                }
-                myPosts.addAll(posts);
-                for(Post post:posts){
-                    Log.i(TAG,"Post: " + post.getDescription() + ", username: " + post.getUser().getUsername());
-                }
             }
         });
 

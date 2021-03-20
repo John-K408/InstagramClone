@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
@@ -24,7 +26,8 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
 
     public FeedsAdapter(Context context, List<Post> posts){
         this.context = context;
-        this.posts.addAll(posts);
+        this.posts = posts;
+        Toast.makeText(context,posts.size() + "",Toast.LENGTH_LONG).show();
     }
 
 
