@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         if(ParseUser.getCurrentUser() != null){
-            //goMainActivity();
-            goFeedActivity();
+            goMainActivity();
+            //goFeedActivity();
         }
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                    goFeedActivity();
+
+                    goMainActivity();
                     Toast.makeText(LoginActivity.this,"Successfully logged in!",Toast.LENGTH_LONG).show();
                 }
             }
@@ -89,9 +90,5 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void goFeedActivity(){
-        Intent intent = new Intent(this,feedActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 }

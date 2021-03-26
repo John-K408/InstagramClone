@@ -12,6 +12,7 @@
         android:src="@mipmap/ic_launcher_round"
         android:id="@+id/ivProfileImage"
         android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
         />
 
     <TextView

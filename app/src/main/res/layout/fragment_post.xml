@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feedActivity"
+    tools:context=".Fragments.PostFragment"
     android:background="@color/white">
 
     <ImageView
@@ -38,15 +38,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:id="@+id/rvFeed"
-        android:layout_below="@+id/ivTakePicture"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:id="@+id/rvPosts"
+            android:layout_below="@+id/ivTakePicture"
+            android:padding="8dp"
+            />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

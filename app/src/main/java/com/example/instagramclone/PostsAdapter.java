@@ -1,8 +1,6 @@
 package com.example.instagramclone;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,30 +14,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
-public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
-    Context context;
-    List<Post> posts;
+public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
+    private Context context;
+    private List<Post> posts;
 
-    public FeedsAdapter(Context context, List<Post> posts){
+    public PostsAdapter(Context context, List<Post> posts){
         this.context = context;
         this.posts = posts;
-        Toast.makeText(context,posts.size() + "",Toast.LENGTH_LONG).show();
     }
 
 
     @NonNull
     @Override
-    public FeedsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PostsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FeedsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PostsAdapter.ViewHolder holder, int position) {
         Post post = posts.get(position);
         holder.bind(post);
     }
@@ -49,16 +44,24 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
         return posts.size();
     }
 
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
+    public void addAll(List<Post> newPosts){
+        posts.addAll(newPosts);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView ivProfilePicture;
-        TextView tvUsername;
-        ImageView ivPicture;
-        ImageView ivLikes;
-        ImageView ivComments;
-        ImageView ivDirect;
-        ImageView ivSave;
-        TextView tvLikesCount;
-        TextView tvDescription;
+        private ImageView ivProfilePicture;
+        private TextView tvUsername;
+        private ImageView ivPicture;
+        private ImageView ivLikes;
+        private ImageView ivComments;
+        private ImageView ivDirect;
+        private ImageView ivSave;
+        private TextView tvLikesCount;
+        private TextView tvDescription;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -77,7 +80,12 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.ViewHolder>{
         public void bind(Post post) {
             tvUsername.setText(post.getUser().getUsername());
             //fill imageView with post's image
-            //Glide.with(context).load(post.getImage()).into(ivPicture);
+            ParseFile image = post.getImage();
+
+            if(image != null){
+                Glide.with(context).load(post.getImage().getUrl()).into(ivPicture);
+            }
+
             tvDescription.setText(post.getDescription());
         }
     }
