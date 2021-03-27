@@ -14,15 +14,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Calendar;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     private Context context;
     private List<Post> posts;
+    Date currentTime;
 
     public PostsAdapter(Context context, List<Post> posts){
         this.context = context;
         this.posts = posts;
+//        currentTime =
     }
 
 
@@ -62,6 +66,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         private ImageView ivSave;
         private TextView tvLikesCount;
         private TextView tvDescription;
+        private TextView tvTimeStamp;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -75,6 +80,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             ivSave = itemView.findViewById(R.id.ivSave);
             tvLikesCount = itemView.findViewById(R.id.tvLikesCount);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            tvTimeStamp = itemView.findViewById(R.id.tvTimestamp);
         }
 
         public void bind(Post post) {
@@ -92,6 +98,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             }
 
             tvDescription.setText(post.getDescription());
+           // tvTimeStamp.setText();
         }
     }
 }

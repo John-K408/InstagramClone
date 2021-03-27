@@ -7,6 +7,8 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.util.Date;
+
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
@@ -15,6 +17,11 @@ public class Post extends ParseObject {
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED = "createdAt";
     public static final String PROFILE_IMAGE = "ProfileImage";
+    public  int TIME_CREATED_MIL;
+    public Post(){
+        Date date = getDate(KEY_CREATED);
+
+    }
 
     public String getDescription(){
         return getString(KEY_DESCRIPTION);

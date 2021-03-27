@@ -19,22 +19,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:layout_toRightOf="@+id/ivProfileImage"
         tools:text="This is my username moreafdssdof workdfasdsfsdladksfjdas;lkfjdsal;kfjdkls;fjadls;fjadskl;fjdlskafjlksdfjldsa"
         android:textColor="@color/black"
         android:id="@+id/tvUsername"/>
+
+
     <TextView
+        android:id="@+id/tvTimestamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/tvUsername"
-        tools:text="10:00pm"
-        android:id="@+id/timestamp"/>
-
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="9dp"
+        android:textColor="@color/black"
+        tools:text="10:00pm" />
 
     <ImageView
         android:layout_marginTop="10dp"
