@@ -27,6 +27,14 @@
         tools:text="This is my username moreafdssdof workdfasdsfsdladksfjdas;lkfjdsal;kfjdkls;fjadls;fjadskl;fjdlskafjlksdfjldsa"
         android:textColor="@color/black"
         android:id="@+id/tvUsername"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/tvUsername"
+        tools:text="10:00pm"
+        android:id="@+id/timestamp"/>
+
 
     <ImageView
         android:layout_marginTop="10dp"
